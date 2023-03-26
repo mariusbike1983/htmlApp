@@ -15,13 +15,17 @@ window.addEventListener('load', function() {
 		}
 		const newItem = document.createElement("div");
 		newItem.classList.add("todo-item");
-		newItem.innerText = todoText;
+
+		const text = document.createElement("div");
+		text.classList.add("text");
+		text.innerText = todoText;
+		newItem.appendChild(text);
 
 		const detail = document.createElement("span");
 		detail.classList.add("detail");
 		detail.innerText = when;
-
 		newItem.appendChild(detail);
+
 		newItem.addEventListener('click', handleClickOnItem);
 
 		const inProgressList = document.getElementById('current-todo-list');
